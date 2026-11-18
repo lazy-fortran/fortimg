@@ -1,14 +1,15 @@
 module fortimg
-    !! PNG and JPEG images in Fortran.
+    !! PNG and JPEG images in Fortran: decoding both, encoding both.
     use iso_fortran_env, only: int8
     use fortimg_image, only: image_t, image_convert, image_orient, IMG_OK, IMG_ERR_FORMAT, &
         IMG_ERR_CORRUPT, IMG_ERR_UNSUPPORTED
     use fortimg_png, only: png_decode, png_encode, is_png
     use fortimg_jpeg, only: jpeg_decode, jpeg_exif_orientation, is_jpeg
+    use fortimg_jpeg_encode, only: jpeg_encode
     implicit none
     private
     public :: image_t, image_convert, image_orient, image_decode
-    public :: png_decode, png_encode, is_png, jpeg_decode, jpeg_exif_orientation, is_jpeg
+    public :: png_decode, png_encode, is_png, jpeg_decode, jpeg_encode, jpeg_exif_orientation, is_jpeg
     public :: IMG_OK, IMG_ERR_FORMAT, IMG_ERR_CORRUPT, IMG_ERR_UNSUPPORTED
 
 contains
